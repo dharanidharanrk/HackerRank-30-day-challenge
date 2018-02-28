@@ -1,0 +1,24 @@
+#!/bin/python3
+
+import sys
+
+def angryChildren(K, packets):
+    # Complete this function
+    sum=0
+    array=sorted(packets)
+    for i in range (0,K):
+        for j in range(1,K):
+            if(i<j):
+                sum+=abs(array[i]-array[j])
+    return sum
+
+if __name__ == "__main__":
+    N = int(input().strip())
+    K = int(input().strip())
+    packets = []
+    packets_i = 0
+    for packets_i in range(N):
+       packets_t = int(input().strip())
+       packets.append(packets_t)
+    result = angryChildren(K, packets)
+    print(result)
